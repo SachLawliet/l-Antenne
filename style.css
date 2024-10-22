@@ -553,6 +553,9 @@ footer {
     }
 
     /* Adjust large image for small screens */
+    #large-image-container {
+        width: 75%;
+    }
     #large-image {
         max-width: 90%;
         max-height: 60vh;
@@ -560,7 +563,7 @@ footer {
 
     /* Image grid layout */
     .image-container {
-        width: 100%; /* Full width for grid */
+        width: 25%; /* Full width for grid */
         padding: 10px;
     }
 
