@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 webp.style.top = `${Math.random() * 100}vh`;
                 webp.style.left = `${Math.random() * 100}vw`;
 
-                smallAntenna.appendChild(img);
+                smallAntenna.appendChild(webp);
                 document.body.appendChild(smallAntenna);
                 smallAntennas.push(smallAntenna);
             }
