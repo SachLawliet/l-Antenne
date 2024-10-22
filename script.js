@@ -57,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 smallAntenna.href = links[Math.floor(Math.random() * links.length)];
                 smallAntenna.target = '_self'; // Open in the same tab
                 
-                const img = document.createElement('img');
-                img.src = 'pics/antenne.webp';
-                img.alt = 'Small Antenne';
-                img.className = 'small-antenna';
+                const webp = document.createElement('webp');
+                webp.src = 'pics/antenne.webp';
+                webp.alt = 'Small Antenne';
+                webp.className = 'small-antenna';
                 
                 // Position the small antennas randomly on the page
-                img.style.top = `${Math.random() * 100}vh`;
-                img.style.left = `${Math.random() * 100}vw`;
+                webp.style.top = `${Math.random() * 100}vh`;
+                webp.style.left = `${Math.random() * 100}vw`;
 
                 smallAntenna.appendChild(img);
                 document.body.appendChild(smallAntenna);
