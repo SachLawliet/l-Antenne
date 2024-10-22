@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 smallAntenna.target = '_self'; // Open in the same tab
                 
                 const img = document.createElement('img');
-                img.src = 'pics/antenne.img';
+                img.src = 'pics/antenne.webp';
                 img.alt = 'Small Antenne';
                 img.className = 'small-antenna';
                 
