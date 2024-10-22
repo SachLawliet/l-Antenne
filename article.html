@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Pages Successives</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .page {
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, visibility 0s 0.6s;
+            line-height: 2rem;
+        }
+
+        .page.visible {
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0s;
+        }
+
+        /* Page 1: Noir avec texte blanc */
+        .page1 {
+            background-color: black;
+            color: white;
+        }
+
+        /* Page 2: Blanc avec texte noir */
+        .page2 {
+            background-color: white;
+            color: black;
+        }
+
+        #nextBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #nextBtn:hover {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="page page1 visible">Noir et<br> blanc 2?<br> Ise >EN</div>
+    <div class="page page2">AB1M3<br> Relation qui<br> vient d'un</div>
+    <div class="page">endroit étrange<br> 4YYYY<br> 5YYYY</div>
+    <div class="page">6YYYY<br> 7IIIJHH<br> ...</div>
+
+    <button id="nextBtn">Suivant</button>
+</div>
+
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+    const nextBtn = document.getElementById('nextBtn');
+
+    nextBtn.addEventListener('click', function() {
+        if (currentPage < pages.length - 1) {
+            pages[currentPage].classList.remove('visible'); // Cache la page actuelle
+            currentPage++;
+            pages[currentPage].classList.add('visible'); // Affiche la page suivante
+        } else {
+            nextBtn.style.display = 'none'; // Cache le bouton quand la dernière page est affichée
+        }
+    });
+</script>
+
+</body>
+</html>

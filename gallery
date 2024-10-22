@@ -1,0 +1,26 @@
+        <section class="gallery-section" id="gallerySection">
+            <a href="https://youtu.be/xzzEWuLXf8U">
+                <img src="pics/table.JPG" alt="Gallery Image 1" class="gallery-image">
+            </a>
+            <a href="https://youtu.be/HB5QVtRI9Q0">
+                <img src="pics/nou.jpg" alt="Gallery Image 2" class="gallery-image">
+            </a>
+            <img src="pics/n.jpg" alt="n" class="gallery-image">
+            <img src="pics/v.jpg" alt="v" class="gallery-image">
+            <img src="pics/ss.jpg" alt="s" class="gallery-image">
+            <img src="pics/s.jpg" alt="s" class="gallery-image">
+            <img src="pics/branché.jpg" alt="branché" class="gallery-image">
+            <img src="pics/l.jpg" alt="l" class="gallery-image">
+            <div class="gallery-text">
+                <h3>Retour chez les anges,<br>
+                    le petit Prince leur manquait<br>
+                    Garde encore un peu ton visage d'ange, <br>
+                    Que je sois le seul à le souiller <br>
+                    Regarde l'heure sur un des milles clochets,<br>
+                    Au dessus des murs t'es la Fée clochette <br>
+                    La première feuille sera si belle, <br>
+                    La première fille sera coquette <br>
+                    Elle brûlera yeux vers le ciel, <br>
+                    Elle criera yeux révulsés.</h3>
+            </div>
+        </section>"""

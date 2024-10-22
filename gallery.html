@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="sticky-header">
+            <a href="#imageSection"><img src="pics/jpg.jpg" alt="JPG" class="nav-icon"></a>
+            <a href="#mp4Section"><img src="pics/mp4.jpg" alt="MP4" class="nav-icon"></a>
+            <a href="#wavSection"><img src="pics/wav.jpg" alt="WAV" class="nav-icon"></a>
+            
+            <!-- Move the hamburger menu and the menu inside the header -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                ☰ Menu
+            </div>
+            <div class="menu" id="menu">
+                <ul>
+                    <li><a href="description.html">Description</a></li>
+                    <li><a href="bluehand.html">Bluehand</a></li>
+                    <li><a href="main.html">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="page-content">
+        <header>
+            <h1>Gallery</h1>
+        </header>
+        <section id="imageSection" class="image-section">
+        
+            <div class="image-container">
+                <div class="image-grid">
+                    <div class="grid-item"><img src="pics/s.jpg" data-description="S"></div>
+                    <div class="grid-item"><img src="pics/ss.jpg" data-description="S"></div>
+                    <div class="grid-item"><img src="pics/n.jpg" data-description="N"></div>
+                    <div class="grid-item"><img src="pics/l.jpg" data-description="L"></div>
+                    <div class="grid-item"><img src="pics/branché.jpg" data-description="Zzzz"></div>
+                    <div class="grid-item"><img src="pics/nou.jpg" data-description="violet"></div>
+                    <div class="grid-item"><img src="pics/sd.jpg" data-description="D/S collab"></div>
+                    <div class="grid-item"><img src="pics/ds.jpg" data-description="S/D collab"></div>
+                    <div class="grid-item"><img src="pics/sss.jpg" data-description="S"></div>
+                    <div class="grid-item"><img src="pics/v.jpg" data-description="V"></div>
+                    <div class="grid-item"><img src="pics/harem.png" data-description="Harem"></div>
+                    <div class="grid-item"><img src="pics/sv.jpg" data-description="sv"></div>
+                    <div class="grid-item"><img src="pics/vs.jpg" data-description="vs"></div>
+                    <div class="grid-item"><img src="pics/mange.jpg" data-description="breakfastlunchdinner"></div>
+                    <div class="grid-item"><img src="pics/fort.png" data-description="fort"></div>
+                    <div class="grid-item"><img src="pics/Sans titre.png" data-description="sans titre"></div>
+                    <div class="grid-item"><img src="pics/truc.png" data-description="truc"></div>
+                    <!-- Add more images up to 16 -->
+                </div>
+            </div>
+            <div id="large-image-container">
+                <img id="large-image" src="pics/big_jpg.jpg" alt="Large Image">
+                <div id="image-description">Ptite photo mentale</div>
+            </div>
+            
+        </section>
+        
+        <section id="mp4Section">
+            <a href="https://youtu.be/xzzEWuLXf8U" target="_blank">
+                <img src="pics/table.JPG" style="max-width: 30%; height: auto;">
+            </a>
+            <a href="https://youtu.be/HB5QVtRI9Q0" target="_blank">
+                <img src="pics/branché.JPG" style="max-width: 30%; height: auto;">
+            </a>
+            <a href="https://youtu.be/vgfXhOFjudU" target="_blank">
+                <img src="pics/nou.JPG" style="max-width: 30%; height: auto;">
+            </a>
+
+        </section>
+        <section id="wavSection" class="audio-section">
+            <div class="audio-container">
+                <!-- Left side: Big audio icon and description -->
+                <div class="large-audio-container">
+                    <img id="audio-icon" src="pics/big_wav.jpg" alt="Big Audio Icon">
+                    <p id="audio-description">OUVREZ LES OREILLES</p>
+                </div>
+        
+                <!-- Right side: Audio player grid (4 tracks) -->
+                <div class="audio-grid-container">
+                    <!-- MP3 Audio 1 -->
+                    <div class="audio-item">
+                        <h3>Track 1</h3>
+                        <audio controls>
+                            <source src="sound/ogfortnitr.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+        
+                    <!-- MP3 Audio 2 -->
+                    <div class="audio-item">
+                        <h3>Track 2</h3>
+                        <audio controls>
+                            <source src="sound/goofy.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+        
+                    <!-- SoundCloud Embed 1 -->
+                    <div class="audio-item">
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1514648956&color=%23ff5500&inverse=false&auto_play=false&show_user=true"></iframe>
+                    </div>
+        
+                    <!-- SoundCloud Embed 2 -->
+                    <div class="audio-item">
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/498568587&color=%23ff5500&inverse=false&auto_play=false&show_user=true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <a href="main.html">Back to Home</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
