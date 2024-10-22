@@ -64,6 +64,7 @@ body {
     z-index: 500;
     opacity: 0.8;
     transition: opacity 3s ease-in-out; 
+    background-image: url('pics/antenne.webp');
 }
 
 /* Navigation menu styling */
