@@ -14,6 +14,20 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
+        .responsive-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Space between images */
+        justify-content: center;
+        }
+
+        .responsive-images img {
+            max-width: 100%;      /* Ensure images don't exceed the container width */
+            height: auto;         /* Maintain aspect ratio */
+            object-fit: contain;  /* Ensure the entire image is visible */
+            border-radius: 8px;   /* Optional: Rounded corners for aesthetics */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+        }
     </style>
 </head>
 <body class="desc">
@@ -27,9 +41,11 @@
             <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </div>
-    <img src="pics/first.webp" alt="">    
-    <img src="pics/second.webp" alt="">
-    <img src="pics/third.webp" alt="">
+    <div class="responsive-images">
+        <img src="pics/first.webp" alt="First Image">
+        <img src="pics/second.webp" alt="Second Image">
+        <img src="pics/third.webp" alt="Third Image">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
