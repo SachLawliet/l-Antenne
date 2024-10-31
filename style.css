@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('pics/full.jpg'); /* Set background image */
+    background-image: url('pics/full.webp'); /* Set background image */
     background-color: #000;
     background-size: 50%; /* Cover the entire page */
     background-position: center; /* Center the image */
@@ -64,6 +64,7 @@ body {
     z-index: 500;
     opacity: 0.8;
     transition: opacity 3s ease-in-out; 
+    background-image: url('pics/antenne.webp');
 }
 
 /* Navigation menu styling */
@@ -252,24 +253,7 @@ section {
     position: relative;
 }
 
-/* Big image on the left */
-#large-image-container {
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Large image styling */
-#large-image {
-    max-width: 80%;
-    max-height: 80vh;
-    object-fit: contain;
-}
-
+    
 /* Image description */
 #image-description {
     font-size: 1.2em;
@@ -458,7 +442,7 @@ iframe {
 .image-grid-portfolio {
     display: grid;
     flex-direction: row;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -553,6 +537,9 @@ footer {
     }
 
     /* Adjust large image for small screens */
+    #large-image-container {
+        width: 75%;
+    }
     #large-image {
         max-width: 90%;
         max-height: 60vh;
@@ -560,13 +547,14 @@ footer {
 
     /* Image grid layout */
     .image-container {
-        width: 100%; /* Full width for grid */
+        width: 25%; /* Full width for grid */
         padding: 10px;
     }
 
     .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        grid-template-columns: repeat(1, 1fr); /* Change to 2 columns */
         gap: 8px; /* Smaller gap for small screens */
+        max-width: 25%
     }
 
     .grid-item img {
@@ -624,7 +612,7 @@ footer {
     }
 
     .portfolio-section h2 {
-        font-size: 1.8rem;
+        font-size: 0.6rem;
     }
 
     /* Footer */
