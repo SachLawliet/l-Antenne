@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const randomTexts = [
         "s/o Louann",
-        "s/o Alice"
+        "s/o Alice",
+        "s/o kawa"
     ];
 
     let smallAntennas = [];
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Create new small text elements
-            for (let i = 0; i < 1; i++) {
+            for (let i = 0; i < 3; i++) {
                 const smallText = document.createElement('div');
                 smallText.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
                 smallText.className = 'small-text';
