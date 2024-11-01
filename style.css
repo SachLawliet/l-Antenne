@@ -70,7 +70,8 @@ body {
 .small-text {
     position: absolute;
     font-size: 0.5rem;
-    color: #999;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 3px;
     pointer-events: none; /* Optional to prevent interaction */
