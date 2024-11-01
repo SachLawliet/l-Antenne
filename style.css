@@ -69,8 +69,8 @@ body {
 
 .small-text {
     position: absolute;
-    font-size: 0.5rem;
-    color: #333;
+    font-size: 2rem;
+    color: #999;
     background: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 3px;
