@@ -15,8 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
         'coffee.html',
         'france.html'
     ];
-    
+
+    const randomTexts = [
+        "s/o Louann",
+        "s/o Alice"
+    ];
+
     let smallAntennas = [];
+    let smallTextElements = [];
 
     // Show the hamburger menu softly
     if (hamburgerMenu) {
@@ -44,18 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Show or update small antennas randomly on the page when the central antenna is clicked
+    // Show or update small antennas and text elements randomly on the page when the central antenna is clicked
     if (centralAntenne) {
         centralAntenne.addEventListener('click', function() {
-            // Remove existing small antennas
+            // Remove existing small antennas and text elements
             smallAntennas.forEach(antenna => antenna.remove());
             smallAntennas = [];
+            smallTextElements.forEach(text => text.remove());
+            smallTextElements = [];
 
             // Create new small antennas
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 9; i++) {
                 const smallAntenna = document.createElement('a');
                 smallAntenna.href = links[Math.floor(Math.random() * links.length)];
-                smallAntenna.target = '_self'; // Open in the same tab
+                smallAntenna.target = '_self';
                 
                 const img = document.createElement('img');
                 img.src = 'pics/antenne.webp';
@@ -70,14 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.appendChild(smallAntenna);
                 smallAntennas.push(smallAntenna);
             }
-        });
-    }
 
-    // Optional: Close menu when clicking outside of it
-    if (menu && hamburgerMenu) {
-        document.addEventListener('click', function(event) {
-            if (!menu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-                menu.classList.remove('menu-active');
+            // Create new small text elements
+            for (let i = 0; i < 1; i++) {
+                const smallText = document.createElement('div');
+                smallText.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+                smallText.className = 'small-text';
+                
+                // Position the text elements randomly on the page
+                smallText.style.top = `${Math.random() * 100}vh`;
+                smallText.style.left = `${Math.random() * 100}vw`;
+
+                document.body.appendChild(smallText);
+                smallTextElements.push(smallText);
             }
         });
     }
