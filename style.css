@@ -67,6 +67,16 @@ body {
     background-image: url('pics/antenne.webp');
 }
 
+.small-text {
+    position: absolute;
+    font-size: 0.5rem;
+    color: #999;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none; /* Optional to prevent interaction */
+}
+
+
 /* Navigation menu styling */
 .menu {
     position: fixed;
