@@ -497,6 +497,15 @@ footer {
         overflow: auto;
     }
 
+    .small-text {
+        position: absolute;
+        font-size: 2rem;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        pointer-events: none; /* Optional to prevent interaction */
+    }
+
     /* Large image container should be scrollable if necessary */
     #large-image-container {
         overflow-x: auto;
