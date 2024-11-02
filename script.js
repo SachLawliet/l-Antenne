@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryItems = document.querySelectorAll('.gallery-section *'); 
     const gridItems = document.querySelectorAll(".grid-item img");
     const largeImage = document.getElementById("large-image");
+    const bikhand = document.getElementById("bikhand");
     const imageDescription = document.getElementById("image-description");
     const countdownElement = document.getElementById('time');
     
@@ -52,10 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
         // Loop through all the grid items and add click event listeners
-    if (gridItems.length > 0 && Bikhand && imageDescription) {
+    if (gridItems.length > 0 && bikhand && imageDescription) {
         gridItems.forEach(item => {
             item.addEventListener("click", function () {
-                Bikhand.src = this.src;
+                bikhand.src = this.src;
 
                 const description = this.getAttribute("data-description");
                 imageDescription.textContent = description || "No description available.";
