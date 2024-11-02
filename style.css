@@ -67,6 +67,16 @@ body {
     background-image: url('pics/antenne.webp');
 }
 
+.small-text {
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none; /* Optional to prevent interaction */
+}
+
+
 /* Navigation menu styling */
 .menu {
     position: fixed;
@@ -458,6 +468,12 @@ iframe {
     transform: scale(1.05);
 }
 
+#bikhand {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -465,8 +481,6 @@ footer {
     background-color: #222;
     color: #fff;
 }
-
-/* Base Styles Remain Unchanged */
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -487,6 +501,15 @@ footer {
     .container, .section {
         max-height: none;
         overflow: auto;
+    }
+
+    .small-text {
+        position: absolute;
+        font-size: 0.7rem;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        pointer-events: none; /* Optional to prevent interaction */
     }
 
     /* Large image container should be scrollable if necessary */
@@ -613,6 +636,11 @@ footer {
 
     .portfolio-section h2 {
         font-size: 0.6rem;
+    }
+
+    #bikhand {
+        max-width: 90%;
+        max-height: 60vh;
     }
 
     /* Footer */
