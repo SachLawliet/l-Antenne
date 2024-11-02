@@ -302,13 +302,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-.grid-itemB img {
-    max-width: 90%;
-    max-height: 150px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
 .grid-item img:hover {
     transform: scale(1.1);
 }
@@ -443,36 +436,11 @@ iframe {
     color: #fff;
 }
 
-/* Portfolio Section */
-.portfolio-section {
-    margin: 50px 0;
-}
 
 .portfolio-section h2 {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 20px;
     color: #fff;
-}
-
-/* Image Grid Layout */
-.image-grid-portfolio {
-    display: grid;
-    flex-direction: row;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.image-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.image-item img:hover {
-    transform: scale(1.05);
 }
 
 #bikhand {
