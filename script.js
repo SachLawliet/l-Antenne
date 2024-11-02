@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const centralAntenne = document.getElementById('centralAntenne');
     const galleryItems = document.querySelectorAll('.gallery-section *'); 
     const gridItems = document.querySelectorAll(".grid-item img");
+    const gridItemsB = document.querySelectorAll(".grid-itemB img"
     const largeImage = document.getElementById("large-image");
     const bikhand = document.getElementById("bikhand");
     const imgDescBiktop = document.getElementById("imgDescBiktop");
@@ -54,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
         // Loop through all the grid items and add click event listeners
-    if (gridItems.length > 0 && bikhand && imgDescBiktop) {
-        gridItems.forEach(item => {
+    if (gridItemsB.length > 0 && bikhand && imgDescBiktop) {
+        gridItemsB.forEach(item => {
             item.addEventListener("click", function () {
                 bikhand.src = this.src;
 
