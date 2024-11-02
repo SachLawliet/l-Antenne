@@ -468,6 +468,12 @@ iframe {
     transform: scale(1.05);
 }
 
+#bikhand {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -630,6 +636,11 @@ footer {
 
     .portfolio-section h2 {
         font-size: 0.6rem;
+    }
+
+    #bikhand {
+        max-width: 90%;
+        max-height: 60vh;
     }
 
     /* Footer */
