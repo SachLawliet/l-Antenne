@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridItems = document.querySelectorAll(".grid-item img");
     const largeImage = document.getElementById("large-image");
     const bikhand = document.getElementById("bikhand");
+    const imgDescBiktop = document.getElementById("imgDescBiktop");
     const imageDescription = document.getElementById("image-description");
     const countdownElement = document.getElementById('time');
     
@@ -53,13 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
         // Loop through all the grid items and add click event listeners
-    if (gridItems.length > 0 && bikhand && imageDescription) {
+    if (gridItems.length > 0 && bikhand && imgDescBiktop) {
         gridItems.forEach(item => {
             item.addEventListener("click", function () {
                 bikhand.src = this.src;
 
                 const description = this.getAttribute("data-description");
-                imageDescription.textContent = description || "No description available.";
+                imgDescBiktop.textContent = description || "No description available.";
             });
         });
     }
