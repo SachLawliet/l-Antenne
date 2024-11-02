@@ -51,6 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+        // Loop through all the grid items and add click event listeners
+    if (gridItems.length > 0 && Bikhand && imageDescription) {
+        gridItems.forEach(item => {
+            item.addEventListener("click", function () {
+                Bikhand.src = this.src;
+
+                const description = this.getAttribute("data-description");
+                imageDescription.textContent = description || "No description available.";
+            });
+        });
+    }
+
     // Show or update small antennas and text elements randomly on the page when the central antenna is clicked
     if (centralAntenne) {
         centralAntenne.addEventListener('click', function() {
