@@ -576,7 +576,7 @@ footer {
 
     .image-grid {
         grid-template-columns: repeat(1, 1fr); /* Change to 2 columns */
-        gap: 8px; /* Smaller gap for small screens */
+        gap: 5px; /* Smaller gap for small screens */
         max-width: 25%
     }
 
