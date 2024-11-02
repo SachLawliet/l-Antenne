@@ -457,16 +457,6 @@ footer {
     color: #fff;
 }
 
-/* Ensure the image stays in the bottom-right corner */
-.antenna {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100px; /* Adjust width as needed */
-    height: auto;
-    z-index: 1000; /* Ensures it stays above other content */
-}
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
