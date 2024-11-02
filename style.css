@@ -302,6 +302,13 @@ section {
     transition: transform 0.3s ease;
 }
 
+.grid-itemB img {
+    max-width: 90%;
+    max-height: 150px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
 .grid-item img:hover {
     transform: scale(1.1);
 }
