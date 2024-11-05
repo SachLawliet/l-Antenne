@@ -299,14 +299,14 @@ section {
 .audio-container {
     display: flex;
     justify-content: space-between;
-    width: 80%; /* Adjust as needed */
+    width: 33%; /* Adjust as needed */
     max-width: 1200px;
     padding: 20px;
 }
 
 /* Left side: Large audio icon and description */
 .large-audio-container {
-    width: 50%; /* Takes 33% of the container width */
+    width: 33%; /* Takes 33% of the container width */
     text-align: center;
 }
 
