@@ -310,8 +310,14 @@ section {
     text-align: center;
 }
 
+.playlist {
+    max-width: 300px;
+    height: auto;
+    padding: 50px;
+}
+
 #audio-icon {
-    width: 100%;
+    width: 25%;
     max-width: 300px;
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
@@ -329,6 +335,7 @@ section {
 .audio-grid-container {
     width: 65%; /* Takes 65% of the container width */
     display: grid;
+    padding: 100px;
     grid-template-columns: repeat(2, 1fr); /* 2 columns for the grid */
     grid-gap: 20px; /* Space between grid items */
 }
