@@ -299,7 +299,7 @@ section {
 .audio-container {
     display: flex;
     justify-content: space-between;
-    width: 33%; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
     max-width: 1200px;
     padding: 20px;
 }
