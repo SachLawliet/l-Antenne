@@ -561,28 +561,40 @@ footer {
         height: 40px;
     }
 
-    /* Audio Section */
-    .audio-section {
-        flex-direction: column; /* Stack sections vertically */
-        height: auto; /* Remove full-height restriction */
-    }
-
     .audio-container {
+        display: flex;
         flex-direction: column;
+        gap: 20px;
         width: 100%;
-        padding: 10px;
     }
 
-    .large-audio-container,
+    .large-audio-container {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #audio-icon {
+        width: 50%; /* Adjust as needed for mobile */
+    }
+
+    #audio-description {
+        font-size: 1.1em;
+    }
+
     .audio-grid-container {
-        width: 100%; /* Full width for each */
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 15px;
+    }
+
+    .playlist iframe {
+        height: 300px; /* Adjust height for smaller screens */
     }
 
     .audio-item {
-        width: 100%; /* Ensure each audio item is full width */
-        margin-bottom: 15px;
+        width: 100%;
+        max-width: none; /* Ensure full width on mobile */
     }
-
     /* Video Section */
     .mp4Section {
         flex-direction: column; /* Stack videos vertically */
