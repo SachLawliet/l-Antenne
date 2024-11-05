@@ -300,8 +300,6 @@ section {
     display: flex;
     justify-content: space-between;
     width: 90%; /* Adjust as needed */
-    max-width: 1200px;
-    padding: 20px;
 }
 
 /* Left side: Large audio icon and description */
@@ -311,14 +309,13 @@ section {
 }
 
 .playlist {
-    max-width: 300px;
+    width: 33%;
     height: auto;
     padding: 50px;
 }
 
 #audio-icon {
     width: 25%;
-    max-width: 300px;
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -335,7 +332,7 @@ section {
 .audio-grid-container {
     width: 65%; /* Takes 65% of the container width */
     display: grid;
-    padding: 100px;
+    padding: 50px;
     grid-template-columns: repeat(2, 1fr); /* 2 columns for the grid */
     grid-gap: 20px; /* Space between grid items */
 }
