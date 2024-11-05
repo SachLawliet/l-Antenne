@@ -561,6 +561,12 @@ footer {
         height: 40px;
     }
 
+
+    .mp4Section {
+        height: 100vh;
+        
+    }
+    
     .audio-container {
         display: flex;
         flex-direction: column;
