@@ -599,6 +599,7 @@ footer {
     .mp4Section {
         display: flex;
         height: 100vh;
+        margin: 100px
         flex-direction: column; /* Stack videos vertically */
         padding: 10px;
     }
