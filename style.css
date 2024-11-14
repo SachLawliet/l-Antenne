@@ -560,6 +560,10 @@ footer {
         width: 40px; /* Adjust size for smaller screens */
         height: 40px;
     }
+
+    .wavSection {
+        height: auto;
+    }
     
     .audio-container {
         display: flex;
