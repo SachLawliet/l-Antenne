@@ -370,7 +370,7 @@ iframe {
 }
 
 
-.mp4Section {
+#mp4Section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -596,7 +596,7 @@ footer {
         max-width: none; /* Ensure full width on mobile */
     }
     /* Video Section */
-    .mp4Section {
+    #mp4Section {
         display: flex;
         height: 100vh;
         margin: 100px
