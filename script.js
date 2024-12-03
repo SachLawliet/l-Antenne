@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const randomTexts = [
         "s/o roi",
         "s/o caca",
-        "s/o kawa"
+        "s/o kawa",
+        "s/o Xavier Niel",
+        "s/o la dep"
     ];
 
     let smallAntennas = [];
