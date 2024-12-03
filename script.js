@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Create new small text elements
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 5; i++) {
                 const smallText = document.createElement('div');
                 smallText.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
                 smallText.className = 'small-text';
