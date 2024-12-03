@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const randomTexts = [
-        "s/o Louann",
-        "s/o Alice",
+        "s/o roi",
+        "s/o caca",
         "s/o kawa"
     ];
 
