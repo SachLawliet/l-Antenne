@@ -521,7 +521,6 @@ footer {
     /* Small antennas scaling and positioning */
     .small-antenna {
         width: 70px; /* Reduce size for smaller screens */
-        opacity: 0.7; /* Slightly dim for visual balance */
     }
 
     /* Adjust large image for small screens */
