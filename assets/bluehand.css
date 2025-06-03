@@ -1,0 +1,191 @@
+    /* === 1) Verified Users in Six Columns Under Bluehand Logo === */
+    .user-links {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      max-height: 200px;
+      justify-items: center;
+      margin-top: 20px; 
+      margin-bottom: 20px;
+    }
+    .user-links a {
+      text-decoration: none;
+      color: yellow;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 51, 0.2);
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .user-links a:hover {
+      background: rgba(255, 255, 51, 0.4);
+      text-decoration: underline;
+    }
+    
+    /* === 2) Media Grid Display (3 columns) === */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 50px;
+      height: auto;
+    }
+    .grid-item {
+      position: relative;
+      max-width: auto;
+    }
+    .grid-item img,
+    .grid-item video {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .grid-item video {
+      max-height: 300px;
+    }
+    .grid-item img:hover,
+    .grid-item video:hover,
+    .grid-item embed:hover {
+      transform: scale(1.03);
+    }
+
+    /* === Folder Styling (as on account page) === */
+    .folder-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .folder-item img{
+        max-height: 7rem;
+        width: auto;
+    }
+    
+    .folder-preview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2px;
+    }
+    .folder-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .folder-title {
+      position: absolute;
+      font-weight: bold;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #FFF;
+      text-align: center;
+      padding: 5px;
+      font-size: 0.9rem;
+    }
+    
+    /* === Fullscreen Overlay === */
+    #fullscreenOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; 
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+    #fullscreenOverlay > div:first-child {
+        max-height: 90vh;
+        max-width: auto;/* Don’t exceed viewport height */
+        overflow-y: auto;     /* Scroll folder contents internally */
+        -webkit-overflow-scrolling: touch;
+        width: 100%;          /* Use full overlay width */
+        box-sizing: border-box;
+    }
+      
+    #fullscreenOverlay.show > div:first-child img,
+    #fullscreenOverlay.show > div:first-child video,
+    #fullscreenOverlay.show > div:first-child embed {
+        max-width: auto;
+        max-height: 90vh;/* maintain aspect ratio */
+    }
+    
+    #fullscreenOverlay.show {
+      display: flex;
+    }
+    #fullscreenOverlay img,
+    #fullscreenOverlay video,
+    #fullscreenOverlay embed {
+      max-width: 90vw;
+      max-height: 90vh;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border-radius: 5px;
+    }
+    
+    p {
+      background-color: rgba(20,20,20,0.9);
+      color: yellow;
+      font-weight: bold;
+      padding: 50px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    #fullscreenOverlay .overlay-title,
+    #fullscreenOverlay .overlay-info {
+      position: absolute;
+      color: yellow;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    #fullscreenOverlay .overlay-title {
+      top: 50px;
+      left: 50px;
+      font-size: 1.2rem;
+    }
+    #fullscreenOverlay .overlay-info {
+      bottom: 50px;
+      right: 50px;
+      font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .user-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        justify-items: center;
+        margin-top: 10vh;
+      }
+      .media-grid {
+        display: grid;
+        width: 90vw;
+        grid-template-columns: 2fr;
+        gap: 15px;
+      }
+      
+        #fullscreenOverlay {
+          /* CHANGED: switch to vertical overflow for swiping */
+          overflow-y: scroll;                     /* enable vertical scroll */
+          -webkit-overflow-scrolling: touch;      /* smooth iOS scrolling */
+          scroll-snap-type: x mandatory;          /* enforce snap positions */
+          padding: 0;                             /* reset padding */
+          justify-content: flex-start;           /* start at top of list */
+        }
+    
+        #fullscreenOverlay img,
+        #fullscreenOverlay video,
+        #fullscreenOverlay embed {                        
+          scroll-snap-align: start;              
+          margin: 0;                              /* remove extra margins */
+        
+        }
+    }

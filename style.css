@@ -1,0 +1,1201 @@
+@font-face {
+    font-family: 'MaPolice';
+    src: url('fonts/Electrica Salsa.ttf') format('truetype');
+}
+
+.grecaptcha-badge {
+  opacity: 0.5;
+  max-height: 2rem;
+  width: 2rem;
+}
+
+/* === Negative / Invert Mode === */
+html.invert-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MaPolice', sans-serif;
+    background-image: url('pics/full.webp'); /* Set background image */
+    background-color: #000;
+    background-size: 50%; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: #ffffff; /* Ensure text color contrasts with background */
+    position: relative;
+    overflow: scroll; /* Ensure small antennas stay within viewport */
+    transition: filter 0.5s ease; /* Smooth transition for hue change */
+}
+
+/* Container for the glitch effect */
+.glitch {
+    overflow: hidden;
+    animation: glitch-anim 3s infinite;
+}
+
+/* Duplicate layers for glitch effect */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text); /* Use the same text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%);
+    animation: glitch-skew 3s infinite linear;
+}
+
+/* Colorized glitch layers */
+.glitch::before {
+    color: #ff005a; /* Purple */
+    z-index: -1;
+    clip-path: polygon(0% 10%, 100% 10%, 100% 30%, 0% 30%);
+}
+
+.glitch::after {
+    color: #00ffff; /* Red */
+    z-index: -2;
+    clip-path: polygon(0% 60%, 100% 60%, 100% 90%, 0% 90%);
+}
+
+/* Keyframes for random glitch movements */
+@keyframes glitch-anim {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, -3px);
+    }
+    40% {
+        transform: translate(3px, 3px);
+    }
+    60% {
+        transform: translate(-3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%);
+    }
+    50% {
+        clip-path: polygon(0% 30%, 100% 30%, 100% 60%, 0% 60%);
+    }
+    100% {
+        clip-path: polygon(0% 70%, 100% 70%, 100% 100%, 0% 100%);
+    }
+}
+
+/*-----------------MES SAGES--------------------*/
+
+.message {
+    position:absolute;
+    top:28;
+    left:10;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.success {
+    background-color: #000;
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+.warning {
+    background-color: #000;
+    color: white;
+    border: 2px solid white;
+}
+
+.error {
+    background-color: #000;
+    color: rgba(139, 0, 0, 1);
+    border: 2px solid rgba(139, 0, 0, 1);
+}
+
+
+
+/*-------------------mes sages--------------------------*/
+
+
+/* Content container */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Central antenna image */
+.central-antenne {
+    opacity: 0.8;
+    width: 10%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+
+/* Random small antennas */
+.small-antenna {
+    position: absolute;
+    border-radius: 30px;
+    width: 100px;
+    height: auto;
+    z-index: 500;
+    opacity: 0.8;
+    transition: opacity 3s ease-in-out; 
+    background-image: url('pics/antenne.webp');
+}
+
+.small-text {
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none; /* Optional to prevent interaction */
+}
+
+
+/*-----------------------------MEUH NUE---------------------------------------------*/
+
+/* Hamburger menu */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("pics/BACK MENU.png") no-repeat;
+    background-position: center center;                  /* au centre */
+    background-size: 100% 100%;
+    color: #fff;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999; 
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    margin: 20px 0;
+}   
+
+.menu a {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: black;
+    opacity: 0.6;
+    padding: 1vw 1vh;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.Accmenu li {
+    padding: 10px
+}
+
+.Accmenu a {
+    font-weight: bold;
+    color: #ffffff;
+    padding: 1vw 1vh;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+        
+        
+        /* Glowing yellow effect on hover */
+.Accmenu a:hover {
+    color: yellow;
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* Glowing yellow effect on hover */
+.menu a:hover {
+    color: yellow;
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* Show menu when active */
+.menu-active {
+    transform: translateX(0);
+}
+
+/* Show hamburger menu */
+.menu-show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
+
+.page-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin: 20px 0;
+}
+
+
+
+
+/* Style for gallery section */
+.gallery_body {
+    background-image: url('pics/GALLERY BACK.png');
+    background-position: bottom bottom;
+    
+}
+
+.galleryh1 {
+    position: absolute;
+    top: 10px;
+    left:45%;
+}
+
+/* Gallery navigation container */
+.gallery-navigation {
+  position: absolute;
+  top: 50vh;                 /* placer le point de référence à 50% en hauteur */
+  left: 35vw;                /* placer le point de référence à 50% en largeur */
+  transform: translate(-50%, -50%); /* recentrer l’élément sur son propre centre */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;                /* espace entre chaque vignette */
+  max-width: 90%;           /* largeur max facultative */
+}
+
+/* Chaque lien de navigation */
+.gallery-navigation a {
+  display: block;
+  width: 15rem;
+  /* plus besoin de margin ici, le gap gère l’espacement */
+}
+
+/* Style des images */
+.gallery-navigation a img {
+  width: 100%;              /* occupe toute la largeur du lien */
+  height: auto;
+  display: block;
+  border: 2px solid yellow;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.gallery-navigation a img:hover {
+  transform: scale(1.05);
+}
+
+
+
+/*------------------------------------------account----------------------------------*/
+
+        
+.overlay-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.overlay-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 16px;
+  font-family: monospace; /* Security camera effect */
+}
+
+
+
+            /*------------------------------REGISTER LOGIN------------------------------------------------------------------*/
+        
+        
+        /* Common styling for login and register forms */
+        .loginform, .registerform, .reset-password-form, .forgot-password-form {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 20px;
+            text-align: center;
+            margin: 100px auto; /* Center vertically with spacing */
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Limit maximum width */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            color: #fff; /* White text */
+        }
+        
+        .loginform h1 {
+            font-size: 2rem; /* Large font size */
+            margin-bottom: 20px; /* Space below header */
+            color: #fff; /* White text */
+        }
+        
+        .loginform label {
+            display: block; /* Block-level labels */
+            font-size: 1rem; /* Standard font size */
+            margin-bottom: 10px; /* Space below label */
+            text-align: left; /* Align text to the left */
+        }
+        
+        .loginform input {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside input */
+            margin-bottom: 20px; /* Space below input */
+            border: 1px solid yellow; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 1rem; /* Standard font size */
+            background-color: transparent; /* White background for contrast */
+            color: yellow; /* Black text */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        
+        .loginform button {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside button */
+            background-color: yellow; /* Bright yellow button */
+            opacity: 0.8;
+            color: black; /* Black text */
+            font-weight: bold; /* Bold text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+        }
+        
+        .loginform button:hover {
+            background-color: orange; /* Orange on hover */
+            opacity:0.6;
+        }
+        
+        .loginform h3 {
+            margin-top: 20px; /* Space above text */
+            font-size: 1rem; /* Standard font size */
+            color: #fff; /* White text */
+        }
+        
+        .loginform h3 a {
+            color: yellow; /* Yellow link text */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Bold links */
+        }
+        
+        .loginform h3 a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        
+        /* Styling for the form structure */
+        .form {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: stretch; /* Full width inputs */
+        }
+
+
+            .registerform {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 20px;
+            text-align: center;
+            margin: 100px auto; /* Center vertically with spacing */
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Limit maximum width */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            color: #fff; /* White text */
+        }
+        
+        .registerform h1 {
+            font-size: 2rem; /* Large font size */
+            margin-bottom: 20px; /* Space below header */
+            color: #fff; /* White text */
+        }
+        
+        .registerform label {
+            display: block; /* Block-level labels */
+            font-size: 1rem; /* Standard font size */
+            margin-bottom: 10px; /* Space below label */
+            text-align: left; /* Align text to the left */
+        }
+        
+        .registerform input {
+            background:#222;
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside input */
+            margin-bottom: 20px; /* Space below input */
+            border: 1px solid yellow; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 1rem; /* Standard font size */
+            background-color: transparent; /* White background for contrast */
+            color: yellow; /* Black text */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        
+        .registerform button {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside button */
+            background-color: yellow; /* Bright yellow button */
+            opacity: 0.8;
+            color: black; /* Black text */
+            font-weight: bold; /* Bold text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+        }
+        
+        .registerform button:hover {
+            background-color: orange; /* Orange on hover */
+            opacity: 0.6;
+        }
+        
+        .registerform h3 {
+            margin-top: 20px; /* Space above text */
+            font-size: 1rem; /* Standard font size */
+            color: #fff; /* White text */
+        }
+        
+        .registerform h3 a {
+            color: yellow; /* Yellow link text */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Bold links */
+        }
+        
+        .registerform h3 a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        
+        /* Styling for the form structure */
+        .form {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: stretch; /* Full width inputs */
+        }
+        
+        #tc-button {
+            background-color: transparent;
+            color: yellow;
+            border: 1px solid yellow;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #tc-button:hover {
+            background-color: yellow;
+            color: black;
+            font-weight:bold;
+        }
+        
+        .terms-checkbox input {
+            margin-right: 10px;
+            width: 30px; /* Increased width */
+            height: 30px; /* Increased height */
+            cursor: pointer;
+        }
+
+
+.reset-password-form, .forgot-password-form {
+    color:yellow;
+}
+
+
+
+
+/* Set the full page height for each section */
+section {
+    height: 100vh; /* 100% of the viewport height */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    position: relative;
+}
+/* Image Section Layout */
+.imageSection {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
+}
+    
+/* Image description */
+#image-description {
+    font-size: 1.2em;
+    color: #fff;
+    max-width: 100%;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* Container for the image grid on the right */
+.image-container {
+    width: 40%;
+    display: flex;
+    padding: 200px 100px 0 100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/*---------FULL SCREEN BLUEHAND ACCOUNT-----------*/
+
+/* === Fullscreen Overlay === */
+    .fullscreenOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; 
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+    .fullscreenOverlay > div:first-child {
+        max-height: 90vh;
+        max-width: auto;/* Don’t exceed viewport height */
+        overflow-y: auto;     /* Scroll folder contents internally */
+        -webkit-overflow-scrolling: touch;
+        width: 100%;          /* Use full overlay width */
+        box-sizing: border-box;
+    }
+      
+    .fullscreenOverlay.show > div:first-child img,
+    .fullscreenOverlay.show > div:first-child video,
+    .fullscreenOverlay.show > div:first-child embed {
+        max-width: auto;
+        max-height: 90vh;/* maintain aspect ratio */
+    }
+    
+    .fullscreenOverlay.show {
+      display: flex;
+    }
+    .fullscreenOverlay img,
+    .fullscreenOverlay video,
+    .fullscreenOverlay embed {
+      max-width: 90vw;
+      max-height: 90vh;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border-radius: 5px;
+    }
+    
+    .fullscreenOverlay .overlay-title,
+    .fullscreenOverlay .overlay-info {
+      position: absolute;
+      color: yellow;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .fullscreenOverlay .overlay-title {
+      top: 50px;
+      left: 50px;
+      font-size: 1.2rem;
+    }
+    .fullscreenOverlay .overlay-info {
+      bottom: 50px;
+      right: 50px;
+      font-size: 1rem;
+    }
+
+/* Audio section layout */
+.audio-section {
+    height: 100vh; /* Full page height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.audio-container {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Left side 40%, right side 60% */
+    gap: 20px; /* Space between left and right sections */
+    width: 90%;
+}
+
+/* Left side: Large audio icon, description, and playlist */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+
+.large-audio-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#audio-icon {
+    width: 60%; /* Adjusted to fit the layout */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#audio-description {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.playlist iframe {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Right side: Audio player grid */
+.audio-grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr; /* 2 columns in the grid */
+    gap: 20px;
+    align-items: start;
+}
+
+.audio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.audio-item h3 {
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+
+iframe {
+    width: 100%;
+    max-width: 300px;
+    height: 166px;
+}
+
+
+#mp4Section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the images horizontally */
+}
+
+#mp4Section a img {
+        max-width: 200px; /* Limits the width to 150px */
+        height: auto; /* Maintains the aspect ratio */
+        display: block; /* Prevent inline spacing issues */
+        transition: transform 0.3s ease; /* Adds a hover effect */
+        flex:1;
+        border-radius:20px;
+        margin:2px;
+    }
+
+#mp4Section a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+    
+h1.glitch {
+    text-align: center;
+    font-size: 2em; /* Adjust the size of the heading */
+    margin-top: 50px;
+}
+
+
+
+/* Initial state (hidden) */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Visible state */
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Page Content */
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.page-header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    color: #fff;
+}
+
+
+.portfolio-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+footer {
+   background-color: transparent;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: yellow;
+    text-decoration: none;
+    padding: 20px;
+    border-radius:20px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color:black;
+    font-weight:bold;
+    background-color:yellow;
+}
+
+#random-image-container img {
+    width:30vw; height:80vh; object-fit: contain; margin: 5px;
+}
+
+
+#random-image-container div {
+    display: flex; flex-direction: row; justify-content: center; align-items: center;
+}
+
+
+/*-----------chat*/
+
+/* In your <style> or external CSS */
+.color-0 { color: #000000; }
+.color-1 { color: #0000AA; }
+.color-2 { color: #00AA00; }
+.color-3 { color: #00AAAA; }
+.color-4 { color: #AA0000; }
+.color-5 { color: #AA00AA; }
+.color-6 { color: #FFAA00; }
+.color-7 { color: #AAAAAA; }
+.color-8 { color: #555555; }
+.color-9 { color: #5555FF; }
+.color-a { color: #55FF55; }
+.color-b { color: #55FFFF; }
+.color-c { color: #FF5555; }
+.color-d { color: #FF55FF; }
+.color-e { color: #FFFF55; }
+.color-f { color: #FFFFFF; }
+
+
+
+/* Background image styling */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1; /* put it behind other content */
+}
+
+/* Centered main title */
+
+
+/* Container for the clickable images */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px; /* spacing between images */
+}
+
+/* Each image wrapper */
+.clickable-image img {
+  width: 200px; 
+  height: auto;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover effect on images */
+.clickable-image img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    
+    #random-image-container div {
+        flex-direction:column;
+    }
+    #random-image-container img {
+        width:80vw; height:50vh; object-fit: contain; margin: 5px;
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll, but allow vertical scroll */
+        overflow-y: auto; /* Enable vertical scrolling */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
+    }
+
+    /* Ensure content is scrollable and does not block zooming */
+    .content {
+        overflow-y: auto; /* Ensure content can scroll vertically */
+        max-height: none; /* Allow content to expand fully */
+    }
+
+    /* If specific containers have fixed heights, allow them to grow or scroll */
+    .container, .section {
+        max-height: none;
+        overflow: auto;
+    }
+
+    .small-text {
+        position: absolute;
+        font-size: 0.7rem;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        pointer-events: none; /* Optional to prevent interaction */
+    }
+      /* galllllllllllllllllllllllllllllllllllllllllllllllllllllleryyyyyyyyyyyyyyy*/
+    .galleryh1 {
+        z-index: 99;
+    }
+    .gallery-navigation {
+        /* cancel the desktop centering */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+    
+        /* stack vertically and spread out */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80vh;      /* or whatever height makes sense */
+        max-width: 95%;
+        margin: 0 auto;    /* center container horizontally if needed */
+        margin-top: 9vh;
+        gap: 0;            /* we’ll control spacing manually */
+      }
+    
+    .gallery-navigation a {
+        /* reset any desktop-specific sizing/margins */
+        max-width: 33vw;
+      }
+    
+      /* 1st item: top left */
+    .gallery-navigation a:nth-child(1) {
+        align-self: flex-start;
+      }
+    
+      /* 2nd item: center right */
+    .gallery-navigation a:nth-child(2) {
+        align-self: flex-end;
+        /* optional: if you want some vertical nudge */
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    
+      /* 3rd (last) item: bottom left */
+    .gallery-navigation a:nth-child(3),
+    .gallery-navigation a:last-child {
+        align-self: flex-start;
+      }
+
+
+    /* Hamburger menu for small screens */
+    .hamburger-menu {
+        font-size: 18px; /* Increase font size for easier interaction */
+        padding: 5px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .menu {
+        background: url("pics/BACK MENU.png") no-repeat; /* Image centered and no-repeat */
+        background-size: 400px; /* Control the size of the background image */
+    }
+    .menu a {
+        background: #ffff33; /* Image centered and no-repeat */
+        opacity:0.8;
+        color:white;
+        font-weight: bold; 
+        -webkit-text-stroke: 1px black;
+        border-radius:25;
+        font-size:22px;
+        padding:5px;
+        margin:5px;
+    }
+    
+
+
+    /* Central antenna scaling */
+    .central-antenne {
+        width: 25%; /* Adjust size for smaller screens */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Small antennas scaling and positioning */
+    .small-antenna {
+        width: 70px; /* Reduce size for smaller screens */
+    }
+/*------------------------------ REGISTER   -----------------------*/
+    .terns-checkbox {
+    font-size: 12;
+    }
+    
+    .terns-checkbox {
+    font-size: 12;
+    }
+
+
+    /*------------------------------ LOGIN   -----------------------*/
+
+    .auth-container {
+        width: 95%; /* Reduce width on smaller screens */
+        padding: 20px;
+    }
+    .auth-form h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .auth-form input,
+    .auth-form .btn {
+        font-size: 1rem; /* Adjust input and button size */
+    }
+
+    .grid-item img {
+        max-width: 100%; /* Ensure grid images are responsive */
+        max-height: 150px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin: 20px;
+      height: 15vh;
+    }
+
+    .nav-icon {
+        width: 40px; /* Adjust size for smaller screens */
+        height: 40px;
+    }
+
+    #wavSection {
+        height: auto;
+        margin-top:50px;
+
+    }
+    
+    .audio-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .large-audio-container {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #audio-icon {
+        width: 100%; /* Adjust as needed for mobile */
+    }
+
+    #audio-description {
+        font-size: 1.1rem;
+    }
+
+    .audio-grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 15px;
+    }
+
+    .playlist {
+        height: 300px; /* Adjust height for smaller screens */
+        margin-bottom: 5vh;
+    }
+
+    .audio-item {
+        margin-top: 5vh;
+        width: 100%;
+        max-width: none; /* Ensure full width on mobile */
+    }
+        /* General reset for images */
+    #mp4Section a img {
+        max-width: 100px; /* Limits the width to 150px */
+        height: auto; /* Maintains the aspect ratio */
+        display: block; /* Prevent inline spacing issues */
+    }
+    
+    /* Optional: Flexbox layout for the section */
+    #mp4Section {
+        display: flex;
+        flex-wrap: wrap; /* Allow images to wrap to the next line */
+        gap: 10px; /* Adds space between images */
+        justify-content: center; /* Center align the images */
+        padding: 10px;
+        margin-bottom: 20vh;
+    }
+    
+    h1.glitch {
+        text-align: center;
+        font-size: 2em; /* Adjust the size of the heading */
+        margin-bottom: 20px;
+    }
+
+
+    /* Page content */
+    .page-header h1 {
+        font-size: 2.5em; /* Adjust header size */
+    }
+
+    .portfolio-section h2 {
+        font-size: 0.6rem;
+    }
+
+    
+    /* Footer */
+    footer {
+        margin-top:15vh;
+        padding: 20px;
+    }
+
+    footer a {
+        padding: 8px 15px;
+    }
+
+    /* Fade-in animation should still apply */
+    .fade-in {
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .overlay-title {
+      position:absolute;
+      top:0px;
+      font-size:1rem;
+      opacity:0.8;
+      padding:5px;
+      font-weight: bold;
+      background-color:#111;
+    }
+    #fullscreenOverlay {
+          /* CHANGED: switch to vertical overflow for swiping */
+        overflow-y: scroll;                     /* enable vertical scroll */
+      -webkit-overflow-scrolling: touch;      /* smooth iOS scrolling */
+      scroll-snap-type: x mandatory;          /* enforce snap positions */
+      padding: 0;                             /* reset padding */
+      justify-content: flex-start;           /* start at top of list */
+    }
+    
+    #fullscreenOverlay img,
+    #fullscreenOverlay video,
+    #fullscreenOverlay embed {                        
+      scroll-snap-align: start;              
+      margin: 0;                              /* remove extra margins */
+    }
+
+}
+

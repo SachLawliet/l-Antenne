@@ -1,0 +1,162 @@
+.account-page {
+      display: grid;
+      grid-template-columns: 25% 50% 25%;
+      gap: 10px;
+      padding: 20px;
+      height: 100vh;
+    }
+    .left-panel, .middle-panel, .right-panel {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .fullscreenOverlay.show.div embed {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    
+    #antennaa {
+        margin: 2rem;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .grid-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .grid-item img,
+    .grid-item video,
+    .grid-item embed {
+      width: 100%;
+      display: block;
+    }
+    .grid-item .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: yellow;
+      color: #fff;
+      border: none;
+      padding: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.6rem;
+      opacity: 0.7;
+    }
+    .grid-item .delete-btn:hover {
+      background-color: rgba(255, 0, 0, 1);
+    }
+    .action-btn {
+      background-color: transparent;
+      color: yellow;
+      border: 1px solid yellow;
+      padding: 10px;
+      margin: 0.7rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    .action-btn:hover {
+      background-color: yellow;
+      color: #000;
+    }
+    /* Grille pour afficher les dossiers */
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 5rem;
+      background-color: rgba(20, 20, 20, 0.4);
+
+    }
+    .folder-item {
+      position: relative;
+      max-block-size: fit-content;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .folder-preview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2px;
+    }
+    .folder-preview img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 20vh;
+    }
+    .folder-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: yellow;
+      text-align: center;
+      padding: 5px;
+      font-size: 0.9rem;
+    }
+    
+    .create-folder-form {
+        display: grid;
+        margin: 1rem;
+        gap: 0.5rem;
+    }
+    /* Formulaires */
+    .create-folder-form input[type="text"] {
+      width: 80%;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    .create-folder-form button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: yellow;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .account-page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "middle-panel"
+          "right-panel"
+          "left-panel";
+      }
+      .left-panel { grid-area: left-panel; }
+      .middle-panel {
+        grid-area: middle-panel;
+        height: auto;
+        margin-bottom: 10vh;
+      }
+      .right-panel {
+        margin-top: 1.5rem;
+        grid-area: right-panel;
+      }
+      .action-btn { font-size: 1.1rem; }
+          /* Grille pour afficher les dossiers */
+        .folder-grid {
+          margin-top: 2rem;
+    
+        }
+    }

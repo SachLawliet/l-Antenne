@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Random Antennas Babyyy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Simple navigation menu -->
+    <a href="#" onclick="loadRandomImages()" style="border-radius: 50%; overflow: hidden; display: inline-block;">
+      <img src="pics/antenne.webp" alt="Antenne" style="height: 15vh; width: auto; display: block;" />
+    </a>
+
+
+
+
+  <!-- Container where the random images will be displayed -->
+  <div id="random-image-container"></div>
+
+  <script>
+    function loadRandomImages() {
+      // Create an AJAX request to fetch random images from random-images.php
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "random-images.php", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // Insert the received HTML (3 images) into the container
+          document.getElementById("random-image-container").innerHTML = xhr.responseText;
+        } else {
+          document.getElementById("random-image-container").innerHTML = "Error loading images.";
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
